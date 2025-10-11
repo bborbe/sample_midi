@@ -22,10 +22,10 @@ func main() {
 }
 
 type application struct {
-	SentryDSN   string `required:"false" arg:"sentry-dsn"   env:"SENTRY_DSN"   usage:"SentryDSN"         display:"length"`
+	SentryDSN   string `required:"false" arg:"sentry-dsn"   env:"SENTRY_DSN"   usage:"SentryDSN"            display:"length"`
 	SentryProxy string `required:"false" arg:"sentry-proxy" env:"SENTRY_PROXY" usage:"Sentry Proxy"`
-	Port        string `required:"true"  arg:"port"         env:"PORT"         usage:"MIDI port name"                     default:"IAC Driver GoMIDI"`
-	FilePath    string `required:"true"  arg:"file"        env:"FILE"        usage:"Input MIDI file path"`
+	Port        string `required:"true"  arg:"port"         env:"PORT"         usage:"MIDI port name"                        default:"IAC Driver GoMIDI"`
+	FilePath    string `required:"true"  arg:"file"         env:"FILE"         usage:"Input MIDI file path"`
 }
 
 func (a *application) Run(ctx context.Context, sentryClient libsentry.Client) error {
